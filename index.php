@@ -15,7 +15,7 @@ if ($_FILES['f1']['size'] > 0 && $_FILES['f2']['size'] > 0) {
     $f1 = file_get_contents($f1_name);
     $f2 = file_get_contents($f2_name);
 
-    if (md5($f1) == md5($f2)) {
+    if (hash('sha256',$f1) == hash('sha256',$f2)) {
     ?>
         <h1 class="fs-3">I due file sono uguali!</h1>
     <?php
